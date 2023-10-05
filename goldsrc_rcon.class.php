@@ -22,7 +22,7 @@ function RCon ($Host,$Port,$Password) {
 $this->Password = $Password;
 $this->Host = $Host;
 $this->Port = $Port;
-$this->Socket = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
+$this->Socket = socket_create(AF_INET, SOCK_DGRAM, 0);
 $this->_Sock = socket_connect($this->Socket, $this->Host,$this->Port) or
 die("Unable to open socket: \n");
 # $this->_Set_Timeout($this->_Sock,2,500);
